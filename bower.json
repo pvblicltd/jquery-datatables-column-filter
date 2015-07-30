@@ -19,5 +19,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+   "dependencies": {
+    "datatables": "1.10.7",
+    "select2": "4.0.0"
+  }
 }
