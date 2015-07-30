@@ -70,8 +70,8 @@
 
             for (var i = 0, c = aiRows.length; i < c; i++) {
                 var iRow = aiRows[i];
-                var aData = oTable.fnGetData(iRow);
-                var sValue = aData[iColumn];
+                var aData = oTable.fnGetData(iRow, iColumn);
+                var sValue = aData;
 
                 // ignore empty values?
                 if (bIgnoreEmpty == true && sValue.length == 0) continue;
