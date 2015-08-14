@@ -338,7 +338,7 @@
             if (currentFilter == null || currentFilter == "")//Issue 81
                 currentFilter = oSelected;
 
-            var selectId = "select" + sLabel;
+            var selectId = "select" + sLabel.trim();
             var r = '<select id="' + selectId + '" class="search_init select_filter form-control" rel="' + i + '"><option value="" class="search_init"> Filtrar ' + sLabel + '</option>';
             if (bMultiselect) {
                 r = '<select id="' + selectId + '" class="search_init select_filter form-control" rel="' + i + '" multiple="multiple">';
