@@ -26,7 +26,7 @@
         var asInitVals, i, label, th;
 
         //var sTableId = "table";
-        var sRangeFormat = "From {from} to {to}";
+        var sRangeFormat = "De {from} a {to}";
         //Array of the functions that will override sSearch_ parameters
         var afnSearch_ = new Array();
         var aiCustomSearch_Indexes = new Array();
@@ -249,32 +249,27 @@
             th.html("");
             //th.html(_fnRangeLabelPart(0));
             var sFromId = oTable.attr("id") + '_range_from_' + i;
-            var from = $('<input type="text" class="date_range_filter form-control" id="' + sFromId + '" rel="' + i + '"/>');
+            var from = $('<input type="text" class="col-sm-2 date_range_filter form-control" style="width:150px" id="' + sFromId + '" rel="' + i + '"/>');
             from.datepicker();
             //th.append(from);
             //th.append(_fnRangeLabelPart(1));
             var sToId = oTable.attr("id") + '_range_to_' + i;
-            var to = $('<input type="text" class="date_range_filter form-control" id="' + sToId + '" rel="' + i + '"/>');
+            var to = $('<input type="text" class="col-sm-2 date_range_filter form-control" style="width:150px" id="' + sToId + '" rel="' + i + '"/> ');
             //th.append(to);
             //th.append(_fnRangeLabelPart(2));
 
             for (ti = 0; ti < aoFragments.length; ti++) {
-
                 if (aoFragments[ti] == properties.sDateFromToken) {
                     th.append(from);
                 } else {
                     if (aoFragments[ti] == properties.sDateToToken) {
                         th.append(to);
                     } else {
-                        th.append(aoFragments[ti]);
+                        th.append('<label class="col-sm-1">'+aoFragments[ti]+'<i class="icon-calendar"></i></label>');
                     }
                 }
-
-
             }
-
-
-            th.wrapInner('<span class="filter_column filter_date_range" />');
+            th.wrapInner('<div class="row filter_column filter_date_range"/>');
             to.datepicker();
             var index = i;
             aiCustomSearch_Indexes.push(i);
@@ -660,7 +655,7 @@
             sRangeSeparator: "~",
             iFilteringDelay: 500,
             aoColumns: null,
-            sRangeFormat: "From {from} to {to}",
+            sRangeFormat: "De {from} a {to}",
             sDateFromToken: "from",
             sDateToToken: "to"
         };
